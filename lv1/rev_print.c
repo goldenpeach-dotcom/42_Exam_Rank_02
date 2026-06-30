@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 14:03:02 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/15 14:35:12 by mkaneko          ###   ########.fr       */
+/*   Created: 2026/06/26 15:35:26 by mkaneko           #+#    #+#             */
+/*   Updated: 2026/06/26 15:41:10 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int	i;
 
@@ -22,19 +22,31 @@ int	main(int argc, char **argv)
 		write(1, "\n", 1);
 		return (0);
 	}
-	if (argc == 2)
+	while(argv[1][i])
+		i++;
+	while (i > 0)
 	{
-		while (argv[1][i] != '\0')
-		{
-			i++;
-		}
 		i--;
-		while (i >= 0)
-		{
-			write (1, &argv[1][i], 1);
-			i--;
-		}
+		write(1, &argv[1][i], 1);
 	}
-	write (1, "\n", 1);
+	write(1, "\n", 1);
 	return (0);
 }
+// Assignment name  : rev_print
+// Expected files   : rev_print.c
+// Allowed functions: write
+// --------------------------------------------------------------------------------
+
+// Write a program that takes a string, and displays the string in reverse
+// followed by a newline.
+
+// If the number of parameters is not 1, the program displays a newline.
+
+// Examples:
+
+// $> ./rev_print "zaz" | cat -e
+// zaz$
+// $> ./rev_print "dub0 a POIL" | cat -e
+// LIOP a 0bud$
+// $> ./rev_print | cat -e
+// $

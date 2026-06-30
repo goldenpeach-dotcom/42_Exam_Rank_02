@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_bits.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:11:25 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/25 14:11:37 by mkaneko          ###   ########.fr       */
+/*   Created: 2026/06/24 16:05:28 by mkaneko           #+#    #+#             */
+/*   Updated: 2026/06/24 16:14:32 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned char	swap_bits(unsigned char octet)
+#include <stdio.h>
+
+char	*ft_strcpy(char	*dest, const char *src)
 {
-	return ((octet >> 4 | octet << 4));
+	int	i;
+
+	i = 0;
+	if (!src)
+		return (NULL);
+	while(src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

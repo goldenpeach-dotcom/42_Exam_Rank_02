@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/28 15:43:14 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/28 16:12:56 by mkaneko          ###   ########.fr       */
+/*   Created: 2026/06/28 20:51:48 by mkaneko           #+#    #+#             */
+/*   Updated: 2026/06/28 21:06:21 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,33 @@
 
 int	main(int argc, char **argv)
 {
-	int		i;
-	int		w_word;
+	int	i;
+	int word;
 
 	i = 0;
-	w_word = 0;
+	word = 0;
 	if (argc != 2 || !argv[1])
 	{
 		write(1, "\n", 1);
 		return (0);
 	}
-	
-	while(argv[1][i])
+	while (argv[1][i])
 	{
-		while(argv[1][i] != '\0' && (argv[1][i] == ' ' || argv[1][i] == '\t'))
+		while(argv[1][i]  == ' ' || argv[1][i] == '\t')
 			i++;
-		if(argv[1][i] == '\0')
-			break ;
-		if (w_word == 1)
-		{
+		if (argv[1][i] == '\0')
+			break;
+		if (word == 1)
 			write(1, " ", 1);
-			w_word = 0;
-		}
-		while(argv[1][i] != '\0' && argv[1][i] != ' ' && argv[1][i] != '\t')
+		while(argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\t')
 		{
 			write(1, &argv[1][i], 1);
-			i++;	
+			word = 1;
+			i++;
 		}
-		w_word = 1;
 	}
-	write(1 ,"\n", 1);
-	return (0);	
+	write(1, "\n", 1);
+	return (0);
 }
 // Assignment name  : epur_str
 // Expected files   : epur_str.c

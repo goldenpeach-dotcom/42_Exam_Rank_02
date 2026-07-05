@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   test_print_bits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 13:52:52 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/06 00:04:19 by mkaneko          ###   ########.fr       */
+/*   Created: 2026/07/06 00:25:14 by mkaneko           #+#    #+#             */
+/*   Updated: 2026/07/06 00:40:06 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
-{
-	unsigned int	num;
+#include <unistd.h>
 
-	num = n;
-	if (num <= 0)
-		return (0);
-	while (num > 1)
+void	print_bits(unsigned char octet)
+{
+	int				i;
+	unsigned char	bit;
+
+	i = 7;
+	while (i >= 0)
 	{
-		if (num % 2 != 0)
-			return (0);
-		num = num / 2;
+		bit = ((octet >> i) & 1) + '0';
+		write(1, &bit, 1);
+		i--;
 	}
-	return (1);
 }
 
-// Assignment name  : is_power_of_2
-// Expected files   : is_power_of_2.c
-// Allowed functions: None
+int	main(int argc, char	**argv)
+{
+	print_bits(2);
+	return (0);
+}
+// Assignment name  : print_bits
+// Expected files   : print_bits.c
+// Allowed functions: write
 // --------------------------------------------------------------------------------
 
-// Write a function that determines if a given number is a power of 2.
-
-// This function returns 1 if the given number is a power of 2, otherwise it returns 0.
+// Write a function that takes a byte, and prints it in binary WITHOUT A NEWLINE
+// AT THE END.
 
 // Your function must be declared as follows:
 
-// int	    is_power_of_2(unsigned int n);
+// void	print_bits(unsigned char octet);
+
+// Example, if you pass 2 to print_bits, it will print "00000010"

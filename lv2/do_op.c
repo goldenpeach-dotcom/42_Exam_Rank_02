@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 19:35:51 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/01 19:51:15 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/05 23:09:41 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	main(int argc, char **argv)
 		printf("%d\n", n1 * n2);
 	else if (op == '/')
 		printf("%d\n", n1 / n2);
+	else if (op == '%')
+		printf("%d\n", n1 % n2);
 	return (0);
 }
 // Assignment name  : do_op

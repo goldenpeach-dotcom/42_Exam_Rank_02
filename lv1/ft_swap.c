@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 15:15:00 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/24 15:17:56 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/05 23:00:09 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_swap(int *a, int *b)
 	tmp = 0;
 	*a = *b;
 	*b = tmp;
-	
+
 }
 // Assignment name  : ft_swap
 // Expected files   : ft_swap.c

@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 16:22:07 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/29 16:56:19 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/06 17:49:45 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char	**argv)
 		write(1, "\n", 1);
 		return (0);
 	}
-	while(argv[1][i])
+	while(argv[1][i] )
 	{
 		if(argv[2][j] == '\0')
 			break;

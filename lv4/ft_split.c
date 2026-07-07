@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 14:12:47 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/25 16:01:44 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/07 14:40:40 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ static char	*copy_word(const char *s, char c)
 		word[i] = s[i];
 		i++;
 	}
+	word[i] = '\0';
 	return (word);
 }
 
-static void	free_all(char **arr, size_t	i)
+static char	**free_all(char **arr, size_t	i)
 {
 	while(i > 0)
 	{
@@ -63,14 +64,14 @@ static void	free_all(char **arr, size_t	i)
 		free(arr[i]);
 	}
 	free(arr);
+	return (NULL);
 }
 
-char	**ft_split(char *str, char c)
+char	**ft_split(const char *str, char c)
 {
 	char	**result;
-	int		i;
-	int		j;
-	int		count;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	j = 0;
@@ -87,7 +88,7 @@ char	**ft_split(char *str, char c)
 		{
 			result[j] = copy_word(&str[i], c);
 			if (!result[j])
-				return (free_all(result, j), NULL);
+				return (free_all(result, j));
 			while (str[i] && str[i] != c)
 				i++;
 			j++;

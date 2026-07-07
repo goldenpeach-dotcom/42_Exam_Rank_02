@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 21:34:43 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/29 13:40:34 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/07 14:18:23 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int value(char c)
 	if (c >= 'a' && c <= 'f')
 		return (c - 'a' + 10);
 	if (c >= 'A' && c <= 'F')
-		return (c -'A' + 10);
+		return (c - 'A' + 10);
 	return (-1);
 }
 

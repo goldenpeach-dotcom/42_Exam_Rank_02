@@ -1,12 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strspn.c                                        :+:      :+:    :+:   */
+/*   test_ft_strspn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 20:25:50 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/02 14:07:36 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/06 00:04:26 by mkaneko          ###   ########.fr       */
+>>>>>>> 767dbf6cd5891c36fb76888e7edbf115be8b36fa:lv2/test_ft_strspn.c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +33,7 @@ size_t	ft_strspn(const char *s, const char *accept)
 		}
 		if (accept[j] == '\0')
 			break ;
+
 		i++;
 	}
 	return (i);

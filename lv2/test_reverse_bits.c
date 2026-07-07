@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/01 20:15:00 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/05 23:14:43 by mkaneko          ###   ########.fr       */
+/*   Created: 2026/07/05 16:32:36 by mkaneko           #+#    #+#             */
+/*   Updated: 2026/07/05 22:58:53 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_strdup(char	*src)
+unsigned char	reverse_bits(unsigned char octet)
 {
-	int 	i;
-	char	*dest;
+	unsigned char	result;
+	size_t			i;
 
 	i = 0;
-	if (!src)
-		return (NULL);
-	while (src[i] != '\0')
-		i++;
-	dest = malloc(i + 1);
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
+	result = 0;
+	while (i < 8)
 	{
-		dest[i] = src[i];
+		result = (result << 1) | (octet & 1);
+		octet >>= 1;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+}
+
+void print_bits(unsigned char c)
+{
+	for (int i = 7; i >= 0; i--)
+		printf("%d", (c >> i) & 1);
+	printf("\n");
 }
 
 int	main(void)
 {
-	char	*src = "start!!";
+	unsigned char	c;
 
-	printf("%s\n",ft_strdup(src));
+	c = reverse_bits(2);
+	print_bits(c);
 	return (0);
 }

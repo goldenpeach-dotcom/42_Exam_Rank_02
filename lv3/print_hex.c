@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 18:09:31 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/30 19:44:56 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/06 22:20:47 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,10 @@ int main(int argc, char **argv)
 	i = ft_atoi(argv[1]);
 	if (i < 0)
 	{
-		write(1, "-", 1);
-		ft_putnbr_hex((unsigned int)-i);
+		write(1, "\n", 1);
+		return (0);
 	}
-	else
-	{
-		ft_putnbr_hex((unsigned int)i);
-	}
+	ft_putnbr_hex((unsigned int)i);
 	write (1, "\n", 1);
 	return (0);
 }

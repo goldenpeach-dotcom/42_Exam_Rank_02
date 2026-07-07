@@ -1,45 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   flood_fill.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/01 20:15:00 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/05 23:14:43 by mkaneko          ###   ########.fr       */
+/*   Created: 2026/07/04 21:44:15 by mkaneko           #+#    #+#             */
+/*   Updated: 2026/07/07 00:44:32 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#ifndef FLOOD_FILL_H
+# define FLOOD_FILL_H
 
-char	*ft_strdup(char	*src)
+typedef struct s_point
 {
-	int 	i;
-	char	*dest;
+	int	x;
+	int	y;
+}	t_point;
 
-	i = 0;
-	if (!src)
-		return (NULL);
-	while (src[i] != '\0')
-		i++;
-	dest = malloc(i + 1);
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+void	flood_fill(char **tab, t_point size, t_point begin);
 
-int	main(void)
-{
-	char	*src = "start!!";
-
-	printf("%s\n",ft_strdup(src));
-	return (0);
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 00:01:56 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/01 01:07:38 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/05 23:07:15 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	is_upper(char c)
 {
-	return(c >= 'A' && c <= 'Z');
+	return (c >= 'A' && c <= 'Z');
 }
 
 int	main(int argc, char **argv)

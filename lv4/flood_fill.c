@@ -6,43 +6,27 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 21:07:21 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/04 22:48:37 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/07 00:55:06 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "flood_fill.h"
 
-static void fill(char **area, t_point size, t_point vec, char to_fill)
+static void	fill(char **area, t_point size, t_point vec, char to_fill)
 {
-	if(vec.y < 0 || vec.y >= size.y || vec.x < 0 || vec.x >= size.x || \
-	 area[vec.y][vec.x] != to_fill)
-		return;
+	if (vec.y < 0 || vec.y >= size.y || vec.x < 0 || vec.x >= size.x || \
+	area[vec.y][vec.x] != to_fill)
+		return ;
 	area[vec.y][vec.x] = 'F';
 	fill(area, size, (t_point){vec.x - 1, vec.y}, to_fill);
 	fill(area, size, (t_point){vec.x + 1, vec.y}, to_fill);
 	fill(area, size, (t_point){vec.x, vec.y - 1}, to_fill);
 	fill(area, size, (t_point){vec.x, vec.y + 1}, to_fill);
 }
-void  flood_fill(char **tab, t_point size, t_point begin)
+
+void	flood_fill(char **tab, t_point size, t_point begin)
 {
-	int	i;
-	int	j;
-	
-	i = 0;
-	j = 0;
-	while(i < size.y)
-	{
-		j = 0;
-		while(tab[i][j])
-		{
-			if (tab[i][j] != '0')
-				tab[i][j] = 'F';
-			else
-				tab[i][j] = '0';
-			j++;
-		}
-		i++;
-	}
+	fill(tab, size, begin, tab[begin.y][begin.x]);
 }
 
 // test code

@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 21:44:15 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/04 22:00:54 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/07 00:44:32 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ typedef struct s_point
 	int	y;
 }	t_point;
 
-void	lood_fill(char **tab, t_point size, t_point begin);
+void	flood_fill(char **tab, t_point size, t_point begin);
 
 #endif

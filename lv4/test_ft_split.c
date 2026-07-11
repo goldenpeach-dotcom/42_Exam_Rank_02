@@ -6,11 +6,10 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 10:13:06 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/11 10:48:26 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/11 20:40:15 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 
 static	char	free_all(char **arr, int i)
 {

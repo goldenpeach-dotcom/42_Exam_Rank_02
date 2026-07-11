@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 21:04:14 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/30 21:20:49 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/09 22:44:18 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ char	*ft_itoa(int n)
 
 	digit = 1;
 	num = n;
-
 	if (num < 0)
 	{
 		num = -num;
 		digit = digit + 1;
 	}
-	while(num >= 10)
+	while (num >= 10)
 	{
 		digit = digit + 1;
 		num = num / 10;
@@ -37,14 +36,14 @@ char	*ft_itoa(int n)
 		return (NULL);
 	num = n;
 	str[digit] = '\0';
-	if(num < 0)
+	if (num < 0)
 	{
 		str[0] = '-';
 		num = -num;
 	}
 	if (n == 0)
 	str[0] = '\0';
-	while(num > 0)
+	while (num > 0)
 	{
 		str[--digit] = (num % 10) + '0';
 		num = num / 10;
@@ -52,7 +51,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int main(void)
+int	main(void)
 {
 	printf("%s\n", ft_itoa(15689));
 	return (0);

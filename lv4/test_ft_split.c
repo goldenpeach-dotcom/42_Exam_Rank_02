@@ -6,32 +6,33 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 10:13:06 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/09 22:18:07 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/11 23:11:43 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static void free_all(char *arr)
+static	char	free_all(char **arr, int i)
 {
-	size_t	i;
-
-	i = 0;
-	while(arr[i])
+	if(!arr)
+		return (NULL);
+	while (arr[i])
 	{
+		i--;
 		free(arr[i]);
-		i++;
 	}
 	free(arr);
+	return (NULL);
 }
 
-static int count_words(const char *str)
+static int	count_words(const char *str)
 {
 	size_t	i;
 	size_t	count;
 
 	i = 0;
 	count = 0;
+
 	while(str[i] != '\0')
 	{
 		if(str[i] != ' ' || str[i] != '\t' || str[i] != '\n')
@@ -74,7 +75,30 @@ static char	*copy_word(const char *str)
 	return (word);
 }
 
-char **ft_split(const char *str)
+static char *copy_word(const char *str, const char c)
+{
+	size_t	i;
+	size_t 	j;
+	char	*word;
+
+	i = 0;
+	j = 0;
+	if (!str)
+		return (NULL);
+	while(str[i] != '\0' && str[i] != c)
+		i++;
+	word = malloc(i + 1);
+	if(!word)
+		return (NULL);
+	while(i > j)
+	{
+		word[j] = str[j];
+		j++;
+	}
+	return (word);
+}
+
+char	**ft_split(const char *str const char c)
 {
 	size_t	i;
 	size_t	j;
@@ -97,49 +121,50 @@ char **ft_split(const char *str)
 	return (result);
 }
 
-static void	print_result(char **result)
-{
-	int	i;
+// static void	print_result(char **result)
+// {
+// 	int	i;
 
-	if (!result)
-	{
-		printf("NULL\n");
-		return ;
-	}
-	i = 0;
-	while (result[i])
-	{
-		printf("[%d]: \"%s\"\n", i, result[i]);
-		i++;
-	}
-	printf("合計 %d 単語\n\n", i);
-}
+// 	if (!result)
+// 	{
+// 		printf("NULL\n");
+// 		return ;
+// 	}
+// 	i = 0;
+// 	while (result[i])
+// 	{
+// 		printf("[%d]: \"%s\"\n", i, result[i]);
+// 		i++;
+// 	}
+// 	printf("合計 %d 単語\n\n", i);
+// }
 
 
-static void	test(char *str)
-{
-	char	**result;
-	int		i;
+// static void	test(char *str)
+// {
+// 	char	**result;
+// 	int		i;
 
-	printf("入力: %s\n", str);
-	result = ft_split(str);
-	print_result(result);
-	if (result)
-	{
-		i = 0;
-		while (result[i])
-			free(result[i++]);
-		free(result);
-	}
-}
+// 	printf("入力: %s\n", str);
+// 	result = ft_split(str);
+// 	print_result(result);
+// 	if (result)
+// 	{
+// 		i = 0;
+// 		while (result[i])
+// 			free(result[i++]);
+// 		free(result);
+// 	}
+// }
 
-int	main(void)
-{
-	test("hello world foo bar");       // 基本
-	test("  hello  world  ");          // 前後・連続スペース
-	test("a,b,c");                     // 別の区切り文字
-	test("");                          // 空文字列
-	test("nospace");                   // 区切り文字なし
-	test("///");                       // 区切り文字のみ
-	return (0);
-}
+// int	main(void)
+// {
+// 	test("hello world foo bar");       // 基本
+// 	test("  hello  world  ");          // 前後・連続スペース
+// 	test("a,b,c");                     // 別の区切り文字
+// 	test("");                          // 空文字列
+// 	test("nospace");                   // 区切り文字なし
+// 	test("///");                       // 区切り文字のみ
+// 	return (0);
+// }
+

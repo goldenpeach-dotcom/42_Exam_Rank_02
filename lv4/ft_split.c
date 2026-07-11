@@ -6,12 +6,18 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 14:12:47 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/07 14:40:40 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/11 19:51:27 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+
+//区切り文字が引数にないときは使う
+// static int is_sep(char c)
+// {
+// 	return(c == ' ' || c == '\t' || c == '\n');	
+// } 
 
 static int	count_words(const char *str, const char c)
 {
@@ -98,6 +104,10 @@ char	**ft_split(const char *str, char c)
 	return (result);
 }
 
+
+// count_words: strとcを受け取り、区切りで区切られた単語の個数を返す。前提:特になし
+// copy_word: sは「区切り文字でない文字」から始まっていることが前提。区切りまたは\0までをコピーしたstrdupを返す
+// ft_split: 全体を統括。スキップとcopy_word呼び出しの境界を管理する責任者
 
 // static void	print_result(char **result)
 // {

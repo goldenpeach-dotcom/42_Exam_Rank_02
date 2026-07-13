@@ -1,87 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pgcd.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/02 19:58:39 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/07/02 20:11:15 by mkaneko          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-
-unsigned int	hcf(unsigned int a, unsigned int b)
+void	pgcd(int a,int b)
 {
-	unsigned long	mod;
-	unsigned long	big;
-	unsigned long	small;
+	int	div;
+	int result;
 
-	mod = 0;
-	big = 0;
-	small = 0;
-	if (a == 0 || b == 0)
-		return (0);
-	if (a > b)
+	div = 1;
+	result = 0;
+	while(a >= div && b >= div)
 	{
-		big = a;
-		small = b;
+		if (a % div == 0 && b % div == 0)
+			result = div;
+		div++;
 	}
-	else
-	{
-		big = b;
-		small = a;
-	}
-	while (small > 0)
-	{
-		mod = big % small;
-		big = small;
-		small = mod;
-	}
-	return (big);
+	printf("%d\n", result);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char	**argv)
 {
-	unsigned int	i;
-	unsigned int	j;
-	
+	int	i;
+
 	i = 0;
-	j = 0;
-	if (argc == 3)
+	if (argc == 3 && argv[1] && argv[2])
 	{
-		i = atoi(argv[1]);
-		j = atoi(argv[2]);	
-		printf("%d", hcf(i ,j));
+		pgcd(atoi(argv[1]), atoi(argv[2]));
 	}
-	printf("\n");
 	return (0);
 }
-// Assignment name  : pgcd
-// Expected files   : pgcd.c
-// Allowed functions: printf, atoi, malloc, free
-// --------------------------------------------------------------------------------
-
-// Write a program that takes two strings representing two strictly positive
-// integers that fit in an int.
-
-// Display their highest common denominator followed by a newline (It's always a
-// strictly positive integer).
-
-// If the number of parameters is not 2, display a newline.
-
-// Examples:
-
-// $> ./pgcd 42 10 | cat -e
-// 2$
-// $> ./pgcd 42 12 | cat -e
-// 6$
-// $> ./pgcd 14 77 | cat -e
-// 7$
-// $> ./pgcd 17 3 | cat -e
-// 1$
-// $> ./pgcd | cat -e
-// $

@@ -6,10 +6,9 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 13:40:25 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/29 15:41:06 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/14 00:47:26 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_list_size(t_list *begin_list)
 {
@@ -19,11 +18,11 @@ int	ft_list_size(t_list *begin_list)
 	while(!begin_list)
 	{
 		i++;
-		begin_list = begin_list->next
+		begin_list = begin_list->next;
 	}
 	return (i);
-
 }
+
 // Assignment name  : ft_list_size
 // Expected files   : ft_list_size.c, ft_list.h
 // Allowed functions:

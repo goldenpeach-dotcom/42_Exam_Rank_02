@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 02:59:08 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/06/27 03:28:20 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/07/14 01:15:55 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strpbrk(const char *s, const char *accept)
 	size_t	j;
 
 	i = 0;
-	j = 0;
 	if (!s || !accept)
 		return (NULL);
 	while (s[i] != '\0')
